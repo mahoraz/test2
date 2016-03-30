@@ -1,0 +1,21 @@
+
+Laravel keskkond on üles ehitatud MVC põhimõttel. Ainuke erinevus on 
+"route"-imise vajadus - "app->http->routes.php" sisaldab viitavaid käske - ehk 
+get meetodeid, mis võtavad sisendiks veebi aadressi ja suunavad kas 
+kontrollerile või otse vaatele. 
+*nt. Route::get('/', function (){} eeldab pöördumist veebilehe baas aadressile 
+    https://laravel-mahoraz.c9users.io/
+*Route::get('tasks', function (){} eeldab pöördumist tasks alamlehele 
+    https://laravel-mahoraz.c9users.io/tasks
+
+Vaade - HTML dokument, mis kuvab andmeid/tekste veebilehe külastajale.
+
+Kontroller - sisaldab funktsioone mida saab route abil välja kutsuda ja laseb
+    olenevalt sisendist muuta väljastava vaate sisu.
+
+Mudel - class mudel, üldjuhul seotud ORM põhimõttel andmebaasi tabeliga.
+
+Antud näite projektis leiate "app->Task.php" mudeli, "tasks" tabeli(tabeli loomise
+funktsioon "database->migrations->2016_03_21_082651_create_tasks_table.php") ja
+"resources->views->tasks.blade.php" vaate. Hetkel lahendab kontrolleri ülesandeid 
+"routes.php".
